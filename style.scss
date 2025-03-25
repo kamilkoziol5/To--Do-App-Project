@@ -1,0 +1,161 @@
+@import "variables";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Open Sans", sans-serif;
+	list-style: none;
+}
+
+// Body Styles
+body {
+	padding: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100dvh;
+	background: linear-gradient(
+		328deg,
+		rgba(62, 0, 106, 1) 0%,
+		rgba(217, 147, 255, 1) 48%,
+		rgba(158, 46, 200, 1) 100%
+	);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+// Main App Styles
+.container-wrapper {
+	background-color: $whiteColor;
+	padding: 50px;
+	border-radius: 22px;
+	box-shadow: 0 10px 20px rgba(36, 36, 36, 0.438);
+	width: 700px;
+	max-width: 100%;
+
+	.to-do-app {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		h2 {
+			display: flex;
+			align-items: center;
+			color: $textColor;
+			font-size: 40px;
+			margin-bottom: 25px;
+
+			img {
+				width: 55px;
+				height: auto;
+				margin-left: 25px;
+			}
+		}
+		.search-container {
+			width: 100%;
+			display: flex;
+			position: relative;
+			margin-bottom: 50px;
+
+			input {
+				flex: 1;
+				padding: 20px;
+				border: 1px solid $grayColor;
+				outline: none;
+				border-radius: 8px;
+				font-size: 16px;
+				color: $textColor;
+				font-weight: 500;
+
+				&:focus {
+					border-color: $accentColor;
+				}
+
+				&::placeholder {
+					color: $grayColor;
+				}
+			}
+
+			button {
+				cursor: pointer;
+				position: absolute;
+				right: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				height: 100%;
+				padding: 0 60px;
+				border-radius: 8px;
+				background-color: $accentColor;
+				border: none;
+				outline: none;
+				font-size: 16px;
+				font-weight: 700;
+				color: $whiteColor;
+				transition: 300ms ease;
+
+				&:hover {
+					background-color: #54009e;
+				}
+			}
+		}
+
+		ul {
+			width: 100%;
+
+			li {
+				display: flex;
+				align-items: center;
+				user-select: none;
+				cursor: pointer;
+				padding: 12px 8px 12px 50px;
+				font-size: 17px;
+				font-weight: 500;
+				color: $grayColorDark;
+				position: relative;
+
+				&:before {
+					content: "";
+					position: absolute;
+					width: 28px;
+					height: 28px;
+					background-image: url(images/Unchecked.png);
+					background-size: cover;
+					background-position: center;
+					border-radius: 50%;
+					top: 50%;
+					transform: translateY(-50%);
+					left: 8px;
+				}
+
+				&.checked {
+					text-decoration: line-through;
+					color: $grayColor;
+
+					&::before {
+						background-image: url(images/Checked.png);
+					}
+				}
+
+				span {
+					position: absolute;
+					right: 0;
+					width: 40px;
+					height: 40px;
+					font-size: 22px;
+					color: $grayColor;
+					line-height: 40px;
+					text-align: center;
+					border-radius: 50%;
+
+					&:hover {
+						background-color: rgb(184, 184, 184);
+						color: $grayColorDark;
+					}
+				}
+			}
+		}
+	}
+}
+
+
