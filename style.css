@@ -24,6 +24,13 @@ body {
   box-shadow: 0 10px 20px rgba(36, 36, 36, 0.438);
   width: 700px;
   max-width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.container-wrapper::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
 }
 .container-wrapper .to-do-app {
   display: flex;
@@ -53,13 +60,18 @@ body {
   padding: 20px;
   border: 1px solid #b0b0b0;
   outline: none;
-  border-radius: 8px;
+  border-radius: 200px;
   font-size: 16px;
   color: #131313;
   font-weight: 500;
+  transition: all 300ms ease;
+}
+.container-wrapper .to-do-app .search-container input:focus, .container-wrapper .to-do-app .search-container input:hover {
+  background-color: #f3f3f3;
+  border-color: #880af9;
 }
 .container-wrapper .to-do-app .search-container input:focus {
-  border-color: #880af9;
+  box-shadow: 0 0 20px rgba(20, 20, 20, 0.35);
 }
 .container-wrapper .to-do-app .search-container input::-moz-placeholder {
   color: #b0b0b0;
@@ -75,7 +87,7 @@ body {
   transform: translateY(-50%);
   height: 100%;
   padding: 0 60px;
-  border-radius: 8px;
+  border-radius: 200px;
   background-color: #880af9;
   border: none;
   outline: none;
@@ -97,11 +109,12 @@ body {
      -moz-user-select: none;
           user-select: none;
   cursor: pointer;
-  padding: 12px 8px 12px 50px;
+  padding: 12px 50px 12px 50px;
   font-size: 17px;
   font-weight: 500;
   color: #333;
   position: relative;
+  word-break: break-all;
 }
 .container-wrapper .to-do-app ul li:before {
   content: "";
@@ -133,8 +146,38 @@ body {
   line-height: 40px;
   text-align: center;
   border-radius: 50%;
+  transition: 100ms ease;
 }
 .container-wrapper .to-do-app ul li span:hover {
   background-color: rgb(184, 184, 184);
   color: #333;
+}
+
+@media (max-width: 600px) {
+  .container-wrapper {
+    padding: 30px;
+  }
+  .container-wrapper .to-do-app h2 {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 30px;
+  }
+  .container-wrapper .to-do-app h2 img {
+    margin-left: 0;
+    width: 45px;
+  }
+  .container-wrapper .to-do-app .search-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .container-wrapper .to-do-app .search-container input {
+    padding: 15px;
+    font-size: 15px;
+  }
+  .container-wrapper .to-do-app .search-container button {
+    position: static;
+    transform: translateY(0);
+    padding: 15px;
+    font-size: 15px;
+  }
 }/*# sourceMappingURL=style.css.map */

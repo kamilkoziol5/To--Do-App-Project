@@ -15,15 +15,35 @@ function AddTask() {
 		li.appendChild(span);
 	}
 	inputTask.value = "";
+	saveData();
 }
+
+addBtn.addEventListener("click", AddTask);
+inputTask.addEventListener("keydown", function (e) {
+	if (e.key === "Enter") {
+		AddTask();
+	}
+});
+
 taskContainer.addEventListener(
 	"click",
 	function (e) {
 		if (e.target.tagName === "LI") {
 			e.target.classList.toggle("checked");
+			saveData();
 		} else if (e.target.tagName === "SPAN") {
 			e.target.parentElement.remove();
+			saveData();
 		}
 	},
 	false
 );
+
+function saveData() {
+	localStorage.setItem("data", taskContainer.innerHTML);
+}
+
+function showTask() {
+	taskContainer.innerHTML = localStorage.getItem("data");
+}
+showTask();

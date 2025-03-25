@@ -1,5 +1,6 @@
 @import "variables";
 
+// Global Styles
 * {
 	margin: 0;
 	padding: 0;
@@ -33,6 +34,14 @@ body {
 	box-shadow: 0 10px 20px rgba(36, 36, 36, 0.438);
 	width: 700px;
 	max-width: 100%;
+	max-height: 90vh;
+	overflow: hidden;
+	overflow-y: scroll;
+
+	&::-webkit-scrollbar {
+		width: 0;
+		background: transparent;
+	}
 
 	.to-do-app {
 		display: flex;
@@ -63,13 +72,20 @@ body {
 				padding: 20px;
 				border: 1px solid $grayColor;
 				outline: none;
-				border-radius: 8px;
+				border-radius: 200px;
 				font-size: 16px;
 				color: $textColor;
 				font-weight: 500;
+				transition: all 300ms ease;
+
+				&:focus,
+				&:hover {
+					background-color: #f3f3f3;
+					border-color: $accentColor;
+				}
 
 				&:focus {
-					border-color: $accentColor;
+					box-shadow: 0 0 20px rgba(20, 20, 20, 0.35);
 				}
 
 				&::placeholder {
@@ -85,7 +101,7 @@ body {
 				transform: translateY(-50%);
 				height: 100%;
 				padding: 0 60px;
-				border-radius: 8px;
+				border-radius: 200px;
 				background-color: $accentColor;
 				border: none;
 				outline: none;
@@ -108,11 +124,12 @@ body {
 				align-items: center;
 				user-select: none;
 				cursor: pointer;
-				padding: 12px 8px 12px 50px;
+				padding: 12px 50px 12px 50px;
 				font-size: 17px;
 				font-weight: 500;
 				color: $grayColorDark;
 				position: relative;
+				word-break: break-all;
 
 				&:before {
 					content: "";
@@ -147,6 +164,7 @@ body {
 					line-height: 40px;
 					text-align: center;
 					border-radius: 50%;
+					transition: 100ms ease;
 
 					&:hover {
 						background-color: rgb(184, 184, 184);
@@ -158,4 +176,37 @@ body {
 	}
 }
 
+// Responsive Styles for mobiles
+@media (max-width: 600px) {
+	.container-wrapper {
+		padding: 30px;
+		.to-do-app {
+			h2 {
+				flex-direction: column;
+				gap: 10px;
+				font-size: 30px;
 
+				img {
+					margin-left: 0;
+					width: 45px;
+				}
+			}
+			.search-container {
+				flex-direction: column;
+				gap: 10px;
+
+				input {
+					padding: 15px;
+					font-size: 15px;
+				}
+
+				button {
+					position: static;
+					transform: translateY(0);
+					padding: 15px;
+					font-size: 15px;
+				}
+			}
+		}
+	}
+}
