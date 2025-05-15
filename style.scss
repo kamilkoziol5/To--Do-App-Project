@@ -1,11 +1,11 @@
-@import "variables";
+@import 'variables';
 
 // Global Styles
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: "Open Sans", sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	list-style: none;
 }
 
@@ -132,11 +132,11 @@ body {
 				word-break: break-all;
 
 				&:before {
-					content: "";
+					content: '';
 					position: absolute;
 					width: 28px;
 					height: 28px;
-					background-image: url(images/Unchecked.png);
+					background-image: url(../images/Unchecked.png);
 					background-size: cover;
 					background-position: center;
 					border-radius: 50%;
@@ -150,7 +150,7 @@ body {
 					color: $grayColor;
 
 					&::before {
-						background-image: url(images/Checked.png);
+						background-image: url(../images/checked.png);
 					}
 				}
 

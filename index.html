@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+			rel="stylesheet" />
+		<link
+			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+			rel="stylesheet" />
+		<link rel="stylesheet" href="CSS/style.css" />
+		<link rel="shortcut icon" href="images/list.png" type="image/x-icon" />
+		<title>ToDo: Your Life Changer</title>
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-        rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="images/list.png" type="image/x-icon">
-    <title>ToDo: Your Life Changer</title>
-</head>
-
-<body>
-    <div class="container-wrapper">
-        <div class="to-do-app">
-            <h2>To-Do-List <img src="images/list.png" alt=""></h2>
-            <div class="search-container">
-                <input id="input-task-field" type="text" placeholder="Add Your Task" autocomplete="off">
-                <button id="add-task-btn">Add</button>
-            </div>
-            <ul id="task-container">
-
-            </ul>
-        </div>
-    </div>
-    <script src="main.js"></script>
-</body>
-
+	<body>
+		<div class="container-wrapper">
+			<div class="to-do-app">
+				<h2>To-Do-List</h2>
+				<div class="search-container">
+					<input
+						id="input-task-field"
+						type="text"
+						placeholder="Add Your Task"
+						autocomplete="off" />
+					<button id="add-task-btn">Add</button>
+				</div>
+				<ul id="task-container"></ul>
+			</div>
+		</div>
+		<script type="module" src="JS/Main.js"></script>
+	</body>
 </html>

@@ -121,7 +121,7 @@ body {
   position: absolute;
   width: 28px;
   height: 28px;
-  background-image: url(images/Unchecked.png);
+  background-image: url(../images/Unchecked.png);
   background-size: cover;
   background-position: center;
   border-radius: 50%;
@@ -134,7 +134,7 @@ body {
   color: #b0b0b0;
 }
 .container-wrapper .to-do-app ul li.checked::before {
-  background-image: url(images/Checked.png);
+  background-image: url(../images/checked.png);
 }
 .container-wrapper .to-do-app ul li span {
   position: absolute;
